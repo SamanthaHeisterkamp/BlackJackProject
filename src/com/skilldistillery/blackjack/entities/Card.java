@@ -3,9 +3,12 @@ package com.skilldistillery.blackjack.entities;
 import java.util.Objects;
 
 public class Card {
+	//suit: suit
+	//rank: rank
 	private Suit suit;
 	private Rank rank;
-
+	
+//Card(suit: Suit, rank: Rank)
 	public Card(Suit suit, Rank rank) {
 		this.rank = rank;
 		this.suit = suit;
@@ -27,12 +30,12 @@ public class Card {
 		Card other = (Card) obj;
 		return rank == other.rank && suit == other.suit;
 	}
-
+	//toString(): String
 	@Override
 	public String toString() {
 		return rank + " of " + suit;
 	}
-
+	//getValue(): int
 	public int getValue() {
 		return rank.getValue();
 
