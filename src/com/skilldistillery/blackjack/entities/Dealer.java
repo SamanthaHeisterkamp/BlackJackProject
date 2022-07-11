@@ -1,24 +1,35 @@
 package com.skilldistillery.blackjack.entities;
 
-public class Dealer {
-	Dealer dealer = new Dealer();
-	public Player player = new Player();
+public class Dealer extends Player{
+	private Deck deck = new Deck();
+	private BlackjackHand blackjackhand = new BlackjackHand();
+	private Player player = new Player();
 //deck : Deck
-private Deck deck;
 
 	//Dealer
 public Dealer() {
 	
 }
-	//dealCardToPlayer()
-public void dealCardToPlayer() {
-	Card card = deck.deal();
-//	player.addCard(card);
-	player.addCardToHand(card);
-}
-	//dealCardToDealer()
-public void dealCardToDealer() {
+public void shuffle() {
+	deck.shuffle();
 	
 }
+	//dealCardToPlayer()
+public void dealCard(Player player) {
+	Card card = deck.dealCard();
+//	player.addCard(card);
+	player.addCard(card);
+}
+	//dealCardToDealer()
+
+
 	//dealerPeek();
+
+public void cardsInHand() {
+	super.cardsInHand();
+}
+public int valueDH() {
+	return valueOfPH();
+}
+
 }

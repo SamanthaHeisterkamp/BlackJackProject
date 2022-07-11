@@ -4,30 +4,49 @@ import java.util.ArrayList;
 import java.util.List;
 
 public abstract class Hand {
-	List<Card> hand = new ArrayList<>(); //#cards: List<Card>
+	List<Card> cards; //#cards: List<Card>
 	
+	public Hand() {
+		super();
+		this.cards = new ArrayList<>();
+	}
 	// Hand()
-	Hand() {
-		
+	public void addCard(Card card) {
+		this.cards.add(card);
 	}
 	
+	public void cardsInHand() {
+		for (Card card : cards) {
+			
+				System.out.println(card.toString());
+			}
+		}
+	
+	public List<Card> getHand() {
+		return cards;
+	}
+	
+	public String showCard1() {
+		return "" + cards.get(0);
+	}
 	
 	//+ addCard(card:Card); void
-	public void addCardToHand(Card card) {
-		hand.add(card);
-	}
 	//clear(): void
-	public void clearCardsInHand() {
-		hand.clear();
+	public void clearHand() {
+		cards.clear();
 	}
 	//getHandValue(): int//abstract
 	public abstract int valueOfHand();
 	
 	
+	
 	//toString(): String
+public String showCard2() {
+	return "" + cards.get(1);
+}
 @Override
 public String toString() {
-	return "Hand [hand=" + hand + "]";
-
+	return "Hand [cards=" + cards + ", valueOfHand()=" + valueOfHand() + "]";
 }
+
 }

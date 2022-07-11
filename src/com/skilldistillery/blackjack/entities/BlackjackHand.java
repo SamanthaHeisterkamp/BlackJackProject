@@ -1,7 +1,6 @@
 package com.skilldistillery.blackjack.entities;
 
 public class BlackjackHand extends Hand {
-	BlackjackHand blackjackhand = new BlackjackHand();
 
 	//BlackjackHand()
 	BlackjackHand() {
@@ -11,8 +10,7 @@ public class BlackjackHand extends Hand {
 	
 	//isBlackjack(): boolean
 	public boolean isBlackjack() {
-		int value = this.valueOfHand();
-		if(value == 21) {
+		if(this.valueOfHand() == 21) {
 			return true;
 		}
 		return false;
@@ -30,8 +28,8 @@ public class BlackjackHand extends Hand {
 	
 	public void valueOfDealersHand() {
 		int dealersHandValue = 0;
-		for (int i = 0; i < hand.size(); i++) {
-			for (int h =1; h < hand.size(); h++) {
+		for (int i = 0; i < cards.size(); i++) {
+			for (int h =1; h < cards.size(); h++) {
 				dealersHandValue = h;
 				
 				System.out.println(dealersHandValue);
@@ -42,7 +40,7 @@ public class BlackjackHand extends Hand {
 	public int valueOfHand() {
 		int handValue = 0;
 		
-		for (Card card : hand) {
+		for (Card card : cards) {
 			handValue += card.getValue();
 			
 		}

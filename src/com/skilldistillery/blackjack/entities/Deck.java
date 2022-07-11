@@ -21,9 +21,11 @@ public class Deck {
 
 			}
 		}
-	}
+			return;
+		}
+	
 
-	public Card deal() {
+	public Card dealCard() {
 		return deck.remove(0);
 
 	}

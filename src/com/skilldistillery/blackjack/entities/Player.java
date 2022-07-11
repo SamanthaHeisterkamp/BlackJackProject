@@ -1,29 +1,38 @@
 package com.skilldistillery.blackjack.entities;
 
 public class Player {
-	 Player player = new Player();
-	private BlackjackHand blackjackhand = new BlackjackHand();
-	
+	private BlackjackHand playersHand = new BlackjackHand();
 //hand: Hand
-	private Hand hand;
 	
 // card: Card
-	private Card card;
 
-public void addCardToHand(Card card) {
-	player.addCardToHand(card);
-}
-public void valueOfPlayersCards() {
-	//return player.valueOfHand();
+public int valueOfPH() {
+	return playersHand.valueOfHand();
 }
 
 
 public void cardsInHand() {
-	player.cardsInHand();
+	 playersHand.cardsInHand();
 	
 }
-
+public void addCard(Card card) {
+	playersHand.addCard(card);
 }
+public void clearHand() {
+	playersHand.clearHand();
+}
+public BlackjackHand getPlayersHand() {
+	return playersHand;
+}
+public String showCard1() {
+	return playersHand.showCard1();
+}
+public String showCard2() {
+	return playersHand.showCard2();
+}
+}
+
+
 	
 	//Player()
 	//getHand()
